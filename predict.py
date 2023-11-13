@@ -1,9 +1,7 @@
 from cog import BaseModel, Input, Path
 from model_train import train
 
-MODEL_NAME = (
-    "https://civitai.com/api/download/models/198530?type=Model&format=SafeTensor&size=full&fp=fp16",
-)
+MODEL_NAME = "./jugger.safetensors"
 MODEL_CACHE = "model-cache"
 
 
