@@ -1,8 +1,11 @@
 from cog import BaseModel, Input, Path
 from model_train import train
 
-MODEL_NAME = "stablediffusionapi/juggernaut-xl"
+MODEL_NAME = (
+    "https://civitai.com/api/download/models/198530?type=Model&format=SafeTensor&size=full&fp=fp16",
+)
 MODEL_CACHE = "model-cache"
+
 
 class Predictor(BaseModel):
     def setup(self):
@@ -100,7 +103,6 @@ class Predictor(BaseModel):
             choices=["zip", "tar", "infer"],
         ),
     ) -> Path:
-        
         training_result = train(
             input_images,
             seed,
