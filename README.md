@@ -1,6 +1,6 @@
-# SG161222/RealVisXL_V2.0 LoRA training Cog model
+# stablediffusionapi/juggernaut-xl LoRA training Cog model
 
-This is an implementation of the [SG161222/RealVisXL_V2.0](https://huggingface.co/SG161222/RealVisXL_V2.0) as a Cog model. [Cog packages machine learning models as standard containers.](https://github.com/replicate/cog)
+This is an implementation of the [stablediffusionapi/juggernaut-xl](https://huggingface.co/stablediffusionapi/juggernaut-xl) as a Cog model. [Cog packages machine learning models as standard containers.](https://github.com/replicate/cog)
 
 First, download the pre-trained weights:
 

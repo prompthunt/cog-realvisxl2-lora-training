@@ -1,7 +1,7 @@
 from cog import BaseModel, Input, Path
 from model_train import train
 
-MODEL_NAME = "SG161222/RealVisXL_V2.0"
+MODEL_NAME = "stablediffusionapi/juggernaut-xl"
 MODEL_CACHE = "model-cache"
 
 class Predictor(BaseModel):

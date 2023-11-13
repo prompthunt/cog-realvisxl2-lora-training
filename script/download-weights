@@ -20,7 +20,7 @@ better_vae = AutoencoderKL.from_pretrained(
     torch_dtype=torch.float16,
 )
 
-# Download RealvisXl-v2.0
+# Download stablediffusionapi/juggernaut-xl
 pipe = DiffusionPipeline.from_pretrained(
     MODEL_NAME,
     vae=better_vae,
