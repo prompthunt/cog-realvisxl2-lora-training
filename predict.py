@@ -24,7 +24,7 @@ class Predictor(BaseModel):
         ),
         train_batch_size: int = Input(
             description="Batch size (per device) for training",
-            default=4,
+            default=1,
         ),
         num_train_epochs: int = Input(
             description="Number of epochs to loop through your training dataset",
@@ -32,7 +32,7 @@ class Predictor(BaseModel):
         ),
         max_train_steps: int = Input(
             description="Number of individual training steps. Takes precedence over num_train_epochs",
-            default=1000,
+            default=2560,
         ),
         is_lora: bool = Input(
             description="Whether to use LoRA training. If set to False, will use Full fine tuning",
@@ -72,7 +72,7 @@ class Predictor(BaseModel):
         ),
         caption_prefix: str = Input(
             description="Text which will be used as prefix during automatic captioning. Must contain the `token_string`. For example, if caption text is 'a photo of TOK', automatic captioning will expand to 'a photo of TOK under a bridge', 'a photo of TOK holding a cup', etc.",
-            default="a photo of TOK, ",
+            default="A photo of TOK, ",
         ),
         mask_target_prompts: str = Input(
             description="Prompt that describes part of the image that you will find important. For example, if you are fine-tuning your pet, `photo of a dog` will be a good prompt. Prompt-based masking is used to focus the fine-tuning process on the important/salient parts of the image",
@@ -80,11 +80,11 @@ class Predictor(BaseModel):
         ),
         crop_based_on_salience: bool = Input(
             description="If you want to crop the image to `target_size` based on the important parts of the image, set this to True. If you want to crop the image based on face detection, set this to False",
-            default=True,
+            default=False,
         ),
         use_face_detection_instead: bool = Input(
             description="If you want to use face detection instead of CLIPSeg for masking. For face applications, we recommend using this option.",
-            default=False,
+            default=True,
         ),
         clipseg_temperature: float = Input(
             description="How blurry you want the CLIPSeg mask to be. We recommend this value be something between `0.5` to `1.0`. If you want to have more sharp mask (but thus more errorful), you can decrease this value.",
